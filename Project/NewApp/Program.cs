@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using NewApp.Models;
 public class Program
 {
-    public static void Main(string[] args)
+    private static void Main(string[] args)
     {
         //Person
         Person ps1 = new Person();
@@ -31,29 +31,20 @@ public class Program
         //Student
         Student std1 = new Student();
         Student std2 = new Student();
-        Student std3 = new Student();
-        std1.Nhap();
-        std1.HienThi();
-        std2.Nhap();
-        std2.HienThi();
-        string stdID = "1234";
-        string stdName = "Nguyen Van A";
-        string stdAddress = "Ha Noi";
-        std3.HienThi2(stdID, stdName, stdAddress);
-        Console.WriteLine("ID: {0} - Ho ten: {1} - Dia chi: {2}",std3.IDSpecial(stdID), stdName, stdAddress);
+        std1.EnterData();
+        std1.StudentCode = "12345";
+        std1.Display();
+        std2.EnterData();
+        std2.Display();
         //Employee
         Employee epl1 = new Employee();
         Employee epl2 = new Employee();
-        Employee epl3 = new Employee();
-        epl1.NhapTT();
-        epl1.HienThiTT();
-        epl2.HienThiTT();
-        string MaNV = "1234";
-        string TenNV = "Nguyen Van A";
-        int Tuoi = 23;
-        int Luong = 2000;
-        epl3.HienThiTT2(MaNV, TenNV, Tuoi, Luong);
-        Console.WriteLine("Ma nhan vien: {0} - Ten nhan vien: {1} - Tuoi: {2} - Luong: {3}", MaNV, TenNV, epl3.doTuoi(Tuoi), Luong);
+        epl1.EnterData();
+        epl1.MaNV = "123";
+        epl1.Luong = 2000;
+        std1.Display();
+        std2.EnterData();
+        std2.Display();
         //Fruit
         Fruit fr1 = new Fruit();
         Fruit fr2 = new Fruit();

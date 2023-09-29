@@ -14,12 +14,12 @@ namespace NewApp.Models
         }
         public void EnterData()
         {
-            System.Console.Write("Full Name: ");
+            System.Console.Write("Name: ");
             FullName = Console.ReadLine();
             System.Console.Write("Address: ");
             Address = Console.ReadLine();
             System.Console.Write("Age: ");
-            Age = Convert.ToInt16(Console.ReadLine());
+            Age = Convert.ToInt16(Console.ReadLine());            
         }
         public void Display()
         {
