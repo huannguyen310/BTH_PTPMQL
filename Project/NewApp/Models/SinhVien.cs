@@ -19,7 +19,7 @@ namespace NewApp.Models
         }
         public void HienThiThongTinSV()
         {
-            System.Console.WriteLine("Ho ten: {0} - Dia chi: {1} - Tuoi: {2} - SDT: {3}", HoTen, DiaChi, Tuoi, DiaChi);
+            System.Console.WriteLine("Ho ten: {0} - Dia chi: {1} - Tuoi: {2} - SDT: {3}", HoTen, DiaChi, Tuoi, SDT);
         }
     }
 }
