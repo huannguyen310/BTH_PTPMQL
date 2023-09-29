@@ -18,5 +18,23 @@ namespace NewApp.Models
         {
             System.Console.WriteLine("Name: {0} - Xuat xu: {1} - Gia thanh: {2}", FruitName, Xuatxu, GiaThanh);
         }
+        //Phuong thuc khoi tao
+        public Fruit()
+        {
+            FruitName = "Tao";
+            Xuatxu = "Viet Nam";
+            GiaThanh = 200;
+        }
+        //Phuong thuc co tham so
+        public void hienthiTT2(string FruitName,string Xuatxu, int GiaThanh)
+        {
+            System.Console.WriteLine("Ten loai hoa qua: {0} - Xuat xu: {1} - Gia: {2}", FruitName, Xuatxu, GiaThanh);
+        }
+        //Phuong thuc co gia tri tra ve
+        public int GiaThanhplus(int GiaThanh)
+        {
+            int giahoaqua = GiaThanh *2;
+            return giahoaqua;
+        }
     }
 }
