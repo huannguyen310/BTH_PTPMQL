@@ -8,19 +8,9 @@ public class Program
     private static void Main(string[] args)
     {
         //Person
-        Person ps1 = new Person();
-        Person ps2 = new Person();
-        ps1.FullName = "Nguyen Van A";
-        ps1.Address = "Ha Noi";
-        ps1.Age = 21;
-        ps1.Display();
-        ps2.EnterData();
-        ps2.Display();
         Person ps = new Person();
-        string str = "Nguyen Van Huan";
-        int bien = 21;
-        ps.Display2(str, bien);
-        Console.WriteLine("{0} sinh nam {1}", str, ps.GetYearOfBirth(bien));
+        ps.EnterData();
+        ps.Display();
         //SinhVien
         SinhVien sv1 = new SinhVien();
         SinhVien sv2 = new SinhVien();

@@ -7,10 +7,18 @@ namespace NewApp.Models
         public void EnterData()
         {
             base.EnterData();
-            System.Console.Write("Ma nhan vien: ");
-            MaNV = Console.ReadLine();
-            System.Console.Write("Luong: ");
-            Luong = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                System.Console.Write("Ma nhan vien: ");
+                MaNV = Console.ReadLine();
+                System.Console.Write("Luong: ");
+                Luong = Convert.ToInt32(Console.ReadLine());
+            }
+            catch(Exception e)
+            {
+                MaNV = "Null";
+                Luong = 0;
+            }
         }
         public void Display()
         {
