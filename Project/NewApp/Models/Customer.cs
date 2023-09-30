@@ -1,6 +1,6 @@
 namespace NewApp.Models
 {
-    public class YourClass
+    public class Customer
     {
         
     }

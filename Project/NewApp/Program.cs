@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using NewApp.Models;
 public class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         //Person
         Person ps = new Person();
@@ -19,22 +19,62 @@ public class Program
         sv2.NhapThongTinSV();
         sv2.HienThiThongTinSV();
         //Student
-        Student std1 = new Student();
-        Student std2 = new Student();
-        std1.EnterData();
-        std1.StudentCode = "12345";
-        std1.Display();
-        std2.EnterData();
-        std2.Display();
+        //Khoi tao kich thuoc cua mang
+        int n;
+        do
+        {
+            try
+            {
+            System.Console.Write("So luong sinh vien: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                n = 0;
+            }
+        }while (n<1);
+        //Khoi tao mang
+        Student[] stdArray = new Student[n];
+        //NhapTT
+        for (int i = 0; i < stdArray.Length; i++)
+        {
+            Console.WriteLine("Nhap thong tin sinh vien thu {0}:", (i + 1));
+            Student std = new Student();
+            std.NhapTT();
+            stdArray[i] = std;
+        }
+        //HienthiTT
+        foreach (Student std in stdArray)
+        {
+            std.HienthiTT();
+        }
+        //Themmoi
         //Employee
-        Employee epl1 = new Employee();
-        Employee epl2 = new Employee();
-        epl1.EnterData();
-        epl1.MaNV = "123";
-        epl1.Luong = 2000;
-        std1.Display();
-        std2.EnterData();
-        std2.Display();
+        int m;
+        do
+        {
+            try
+            {
+            System.Console.Write("So luong nhan vien: ");
+            m = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                m = 0;
+            }
+        }while (m<1);
+        Employee [] eplArray = new Employee[m];
+        for(int i = 0; i < eplArray.Length; i++)
+        {
+            Console.WriteLine("Nhap thong tin nhan vien thu {0}: ", (i +1));
+            Employee epl = new Employee();
+            epl.NhapTTepl();
+            eplArray[i] = epl;
+        }
+        foreach( Employee epl in eplArray)
+        {
+            epl.HienthiTTepl();
+        }
         //Fruit
         Fruit fr1 = new Fruit();
         Fruit fr2 = new Fruit();
