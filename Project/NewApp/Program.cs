@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,18 +8,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        //Person
-        Person ps = new Person();
-        ps.EnterData();
-        ps.Display();
-        //SinhVien
-        SinhVien sv1 = new SinhVien();
-        SinhVien sv2 = new SinhVien();
-        sv1.NhapThongTinSV();
-        sv1.HienThiThongTinSV();
-        sv2.NhapThongTinSV();
-        sv2.HienThiThongTinSV();
-        //Student
+        ArrayList StudentList = new ArrayList();
         //Khoi tao kich thuoc cua mang
         int n;
         do
@@ -33,59 +23,58 @@ public class Program
                 n = 0;
             }
         }while (n<1);
-        //Khoi tao mang
-        Student[] stdArray = new Student[n];
-        //NhapTT
-        for (int i = 0; i < stdArray.Length; i++)
+        //Them moi
+        for (int i = 0; i < n; i++)
         {
-            Console.WriteLine("Nhap thong tin sinh vien thu {0}:", (i + 1));
+            System.Console.WriteLine($"[{i}]");
             Student std = new Student();
             std.NhapTT();
-            stdArray[i] = std;
+            StudentList.Add(std);
         }
-        //HienthiTT
-        foreach (Student std in stdArray)
+        //Hien thi
+        foreach(Student std in StudentList)
         {
             std.HienthiTT();
         }
-        //Themmoi
-        //Employee
-        int m;
-        do
+        //Sua TT
+        string StdID = null;
+        System.Console.WriteLine("Nhap ID student can sua: ");
+        StdID = Console.ReadLine();
+        for (int i = 0; i < StudentList.Count; i++)
         {
-            try
+            Student std = (Student) StudentList[i];
+            if(std.StudentID == StdID)
             {
-            System.Console.Write("So luong nhan vien: ");
-            m = Convert.ToInt32(Console.ReadLine());
+                std.NhapTT();
+                break;
             }
-            catch
+            else
             {
-                m = 0;
+                System.Console.WriteLine("No data!");
+                break;
             }
-        }while (m<1);
-        Employee [] eplArray = new Employee[m];
-        for(int i = 0; i < eplArray.Length; i++)
-        {
-            Console.WriteLine("Nhap thong tin nhan vien thu {0}: ", (i +1));
-            Employee epl = new Employee();
-            epl.NhapTTepl();
-            eplArray[i] = epl;
         }
-        foreach( Employee epl in eplArray)
+        foreach(Student std in StudentList)
         {
-            epl.HienthiTTepl();
+            std.HienthiTT();
         }
-        //Fruit
-        Fruit fr1 = new Fruit();
-        Fruit fr2 = new Fruit();
-        Fruit fr3 = new Fruit();
-        fr1.nhaptt();
-        fr1.hienthiTT();
-        fr2.hienthiTT();
-        string FruitName = "Le";
-        string Xuatxu = "Viet Nam";
-        int GiaThanh = 200;
-        fr3.hienthiTT2(FruitName, Xuatxu, GiaThanh);
-        Console.WriteLine("Ten loai hoa qua: {0} - Xuat xu: {1} - Gia: {2}", FruitName, Xuatxu, fr3.GiaThanhplus(GiaThanh));
+        //Xoa phan tu trong danh sach
+        System.Console.WriteLine("Nhap ID Student muon xoa: ");
+        StdID = Console.ReadLine();
+        for(int i = 0; i < StudentList.Count; i++)
+        {
+            Student std = (Student) StudentList[i];
+            if(std.StudentID == StdID)
+            {
+                StudentList.RemoveAt(i);
+                System.Console.WriteLine($"Da xoa student ID: {StdID}");
+                break;
+            }
+        }
+        foreach(Student std in StudentList)
+        {
+            System.Console.WriteLine("Danh sach sau khi xoa:");
+            std.HienthiTT();
+        }
     }
 }
