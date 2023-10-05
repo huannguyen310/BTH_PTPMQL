@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj": {}
+    "C:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj": {}
   },
   "projects": {
-    "c:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj": {
+    "C:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj",
+        "projectUniqueName": "C:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj",
         "projectName": "FirtsWebMVC",
-        "projectPath": "c:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj",
+        "projectPath": "C:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\FirtsWebMVC.csproj",
         "packagesPath": "C:\\Users\\huanc\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\obj\\",
+        "outputPath": "C:\\Users\\huanc\\Desktop\\PTPMQL\\Project\\FirtsWebMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\huanc\\AppData\\Roaming\\NuGet\\NuGet.Config"
