@@ -12,7 +12,7 @@ public class DemoController : Controller
     [HttpPost]
     public IActionResult Index(string fname, string Email)
     {
-        string str = "Hello " + fname + " - " + Email;
+        string str = "Hello " + fname + " - " + "Email: " + Email;
         ViewBag.thongbao = str;
         return View();
     }
