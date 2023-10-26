@@ -1,9 +1,11 @@
 using FirtsWebMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using FirtsWebMVC.Models.Process;
 namespace FirtsWebMVC.Controllers
 {
     public class EmployeeController : Controller
     {
+        StringProcess strPro = new StringProcess();
         public IActionResult Action1()
         {
             return View();
@@ -11,8 +13,7 @@ namespace FirtsWebMVC.Controllers
         [HttpPost]
         public IActionResult Action1(Employee emp)
         {
-            string empOutput = "ID: " + emp.EmployeeId + " - Name: " + emp.FullName.ToUpper() + " - Dia chi: " + " - Age: " + emp.Age;
-            ViewBag.thongbao = empOutput;
+            ViewBag.thongbao = "ID: " + emp.EmployeeId + " - Name: " + strPro.StringToUpper(emp.FullName) + " - Dia chi: " + " - Age: " + emp.Age;
             return View();
         }
         public IActionResult Action2()
