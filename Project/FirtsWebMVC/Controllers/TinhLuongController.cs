@@ -17,7 +17,7 @@ namespace FirtsWebMVC.Controllers
             if(!String.IsNullOrEmpty(HS)) hs = Convert.ToDouble(HS);
             if(!String.IsNullOrEmpty(PC)) pc = Convert.ToDouble(PC);
             luong = cb * hs + pc;
-            trave = "Luong cua ban: " + luong + " USDT";
+            trave = "Lương của bạn: " + luong + " USDT";
             ViewBag.tl = trave;
             return View();
         }
