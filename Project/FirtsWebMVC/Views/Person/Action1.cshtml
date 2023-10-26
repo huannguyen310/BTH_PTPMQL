@@ -1,5 +1,13 @@
 @{
     ViewData["Title"] = "Action1";
 }
-<h2>Person1</h2>
-<p>ABC</p>
+<form asp-action="Action1">
+    <label>Nhập PersonID:</label>
+    <input type="text" name="PersonId">
+    <label>Nhập họ tên:</label>
+    <input type="text" name="FullName">
+    <label>Nhập địa chỉ:</label>
+    <input type="text" name="Address">
+    <input type="submit" value="Send data">
+</form>
+<h1>Dữ liệu từ Controller gửi về là: @ViewBag.infoPerson</h1>
