@@ -12,21 +12,28 @@ namespace FirtsWebMVC.Controllers
         private readonly ApplicationDbcontext _context;
         public PersonController(ApplicationDbcontext context)
         {
-            
+            _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await _context.Person.ToListAsync();
+            return View(model);
         }
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            return View();   
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonId, FullName, Address")] Person person);
         {
-
+            if(ModelState.IsValid)
+            {
+                _context.Add(person);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(person);
         }
         public async Task<IActionResult> Edit(string id)
         {
