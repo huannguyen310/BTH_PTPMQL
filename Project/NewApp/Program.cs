@@ -9,6 +9,7 @@ public class Program
     //BTH slide 60_c6
     public static void Main(string[] args)
     {
+        //BTH slide 68_c6
         ArrayList StudentList = new ArrayList();
         //Khoi tao kich thuoc cua mang
         int n;
