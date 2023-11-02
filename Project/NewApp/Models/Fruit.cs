@@ -2,6 +2,7 @@ namespace NewApp.Models
 {
     public class Fruit
     {
+        //BTH slide 16_6
         public string FruitName { get; set; }
         public string Xuatxu { get; set; }
         public int GiaThanh { get; set; }
@@ -14,6 +15,7 @@ namespace NewApp.Models
             System.Console.Write("Gia: ");
             GiaThanh = Convert.ToInt32(Console.ReadLine());
         }
+        //BTH_slide 22_c6
         public void hienthiTT()
         {
             System.Console.WriteLine("Name: {0} - Xuat xu: {1} - Gia thanh: {2}", FruitName, Xuatxu, GiaThanh);
@@ -36,6 +38,6 @@ namespace NewApp.Models
             int giahoaqua = GiaThanh *2;
             return giahoaqua;
         }
-        //Nguyen Van Huan - 1921050782 - BTH slide 16_6
+        
     }
 }

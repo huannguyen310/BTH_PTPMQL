@@ -2,11 +2,13 @@ namespace NewApp.Models
 {
     public class Employee : Person
     {
+        //BTH slide 16_6
         public string MaNV {get; set;}
         public string TenNV { get; set; }
         public string diachiNV { get; set; }
         public int AgeNV { get; set; }
         public int LuongNV { get; set; }
+        //BTH_slide 22_c6
         public void NhapTTepl()
         {
             Console.Write("Nhap ma nv: ");
@@ -24,6 +26,6 @@ namespace NewApp.Models
         {
             System.Console.WriteLine("Ma nhan vien: {0} - Ten nhan vien: {1} - Dia chi: {2} - Tuoi: {3} - Luong: {4}", MaNV, TenNV, diachiNV, AgeNV, LuongNV);
         }
-        //BTH slide 16_6
+        
     }
 }

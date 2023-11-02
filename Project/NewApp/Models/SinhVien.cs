@@ -21,5 +21,6 @@ namespace NewApp.Models
         {
             System.Console.WriteLine("Ho ten: {0} - Dia chi: {1} - Tuoi: {2} - SDT: {3}", HoTen, DiaChi, Tuoi, SDT);
         }
+        //BTH slide 22_c6
     }
 }
