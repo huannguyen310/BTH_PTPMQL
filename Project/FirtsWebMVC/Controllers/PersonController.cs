@@ -2,6 +2,7 @@ using FirtsWebMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace FirtsWebMVC.Controllers
 {
+    //BTH_slide 17_c7
     public class PersonController : Controller
     {
         public IActionResult Action1()
