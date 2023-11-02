@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using NewApp.Models;
 public class Program
 {
+    //BTH slide 60_c6
     public static void Main(string[] args)
     {
         ArrayList StudentList = new ArrayList();
