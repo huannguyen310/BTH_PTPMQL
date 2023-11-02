@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace NewApp.Models
 {
+    //BTH slide 34_c6
     public class GiaiPT
     {
         public string GPTBac1(double a, double b)
