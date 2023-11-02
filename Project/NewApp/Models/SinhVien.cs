@@ -13,7 +13,11 @@ namespace NewApp.Models
             System.Console.Write("Dia chi: ");
             DiaChi = Console.ReadLine();
             System.Console.Write("Tuoi: ");
+            try{
             Tuoi = Convert.ToInt16(Console.ReadLine());
+            }catch(Exception e){
+                Tuoi = 0;
+            }
             System.Console.Write("SDT: ");
             SDT = Convert.ToInt32(Console.ReadLine());
         }

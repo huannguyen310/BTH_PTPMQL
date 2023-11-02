@@ -18,7 +18,11 @@ namespace NewApp.Models
             Console.Write("Nhap dia chi: ");
             Diachi = Console.ReadLine();
             Console.Write("Nhap tuoi: ");
+            try{
             Tuoi = Convert.ToInt16(Console.ReadLine());
+            }catch(Exception e){
+                Tuoi = 0;
+            }
         }
         public void HienthiTT()
         {

@@ -19,7 +19,11 @@ namespace NewApp.Models
             Console.Write("Nhap dia chi nv: ");
             diachiNV = Console.ReadLine();
             Console.Write("Nhap tuoi nv: ");
+            try{
             AgeNV = Convert.ToInt16(Console.ReadLine());
+            }catch(Exception e){
+                AgeNV = 0;
+            }
             Console.Write("Luong nv: ");
             LuongNV = Convert.ToInt32(Console.ReadLine());
         }

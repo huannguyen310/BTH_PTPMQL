@@ -13,7 +13,11 @@ namespace NewApp.Models
             System.Console.Write("Xuat xu: ");
             Xuatxu = Console.ReadLine();
             System.Console.Write("Gia: ");
+            try{
             GiaThanh = Convert.ToInt32(Console.ReadLine());
+            }catch(Exception e){
+                GiaThanh = 0;
+            }
         }
         //BTH_slide 22_c6
         public void hienthiTT()
