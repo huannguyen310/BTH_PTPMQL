@@ -22,5 +22,6 @@ namespace NewApp.Models
         {
             System.Console.WriteLine("ID: {0} - Ten: {1} - Dia chi: {2} - Tuoi: {3}", StudentID, StudentName, Diachi, Tuoi);
         }
+        //BTH slide 16_6
     }
 }

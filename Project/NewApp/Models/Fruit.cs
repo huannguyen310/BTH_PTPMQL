@@ -36,5 +36,6 @@ namespace NewApp.Models
             int giahoaqua = GiaThanh *2;
             return giahoaqua;
         }
+        //Nguyen Van Huan - 1921050782 - BTH slide 16_6
     }
 }
