@@ -1,5 +1,6 @@
 namespace NewApp.Models
 {
+    //BTH_slide 43_c6
     public class Employee : Person
     {
         //BTH slide 16_6

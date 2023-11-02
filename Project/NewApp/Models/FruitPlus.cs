@@ -1,5 +1,6 @@
 namespace NewApp.Models
 {
+    //BTH_slide 43_c6
     public class FruitPlus : Fruit
     {
         public string HSD { get; set; }
