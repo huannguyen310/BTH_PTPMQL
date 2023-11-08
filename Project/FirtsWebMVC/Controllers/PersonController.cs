@@ -23,7 +23,7 @@ namespace FirtsWebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId, FullName, Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId, FullName, Address, Sex")] Person person)
         {
             if(ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace FirtsWebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId, FullName, Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId, FullName, Address, Sex")] Person person)
         {
             if(id != person.PersonId)
             {
