@@ -20,14 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Employee/Action1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWN0aW9uMS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Employee/Action2.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWN0aW9uMi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/GiaiPTBac2/GiaiPTBac2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lhaVBUQmFjMlxHaWFpUFRCYWMyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,22 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Person/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Person/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Person/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Person/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huanc/Desktop/PTPMQL/Project/FirtsWebMVC/Views/Shared/Error.cshtml]

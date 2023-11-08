@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirtsWebMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231107082500_Create_table_Person")]
+    [Migration("20231108072220_Create_table_Person")]
     partial class Create_table_Person
     {
         /// <inheritdoc />

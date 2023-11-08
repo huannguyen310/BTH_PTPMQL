@@ -10,7 +10,5 @@ namespace FirtsWebMVC.Data
 
         }
         public DbSet<Person> Person { get; set; }
-        
-        
     }
 }

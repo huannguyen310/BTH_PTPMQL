@@ -63,7 +63,7 @@ namespace FirtsWebMVC.Controllers
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if(!Personexists(person.PersonId))
+                    if(!PersonExists(person.PersonId))
                     {
                         return NotFound();
                     }
@@ -98,14 +98,14 @@ namespace FirtsWebMVC.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Person' is null.");
             }
             var person = await _context.Person.FindAsync(id);
-            if(person == null)
+            if(person != null)
             {
                 _context.Person.Remove(person);
             }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        private bool Personexists(string id)
+        private bool PersonExists(string id)
         {
             return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
