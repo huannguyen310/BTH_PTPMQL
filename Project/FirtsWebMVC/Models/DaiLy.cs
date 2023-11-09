@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace FirtsWebMVC.Models
 {
+    [Table("DaiLy")]
     //BTH slide 20_c7
     public class DaiLy
     {
@@ -14,6 +15,6 @@ namespace FirtsWebMVC.Models
         public string MaHTPP { get; set; }
         
         [ForeignKey("MaHTPP")]
-        public HeThongPhanPhoi? HeThongPhanPhoi { get; set; }
+        public HeThongPhanPhoi HeThongPhanPhoi { get; set; }
     }
 }

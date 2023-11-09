@@ -36,6 +36,8 @@ namespace FirtsWebMVC.Migrations
                     b.HasKey("PersonId");
 
                     b.ToTable("Persons");
+
+                    b.UseTptMappingStrategy();
                 });
 #pragma warning restore 612, 618
         }
