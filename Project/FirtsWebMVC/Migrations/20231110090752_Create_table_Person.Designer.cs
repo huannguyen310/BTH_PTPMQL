@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirtsWebMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231108083024_Add_column_Sex_Person")]
-    partial class Add_column_Sex_Person
+    [Migration("20231110090752_Create_table_Person")]
+    partial class Create_table_Person
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace FirtsWebMVC.Migrations
 
             modelBuilder.Entity("FirtsWebMVC.Models.Person", b =>
                 {
-                    b.Property<string>("PersonId")
+                    b.Property<string>("PersonID")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
@@ -32,13 +32,9 @@ namespace FirtsWebMVC.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Sex")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.HasKey("PersonID");
 
-                    b.HasKey("PersonId");
-
-                    b.ToTable("Persons");
+                    b.ToTable("Person");
                 });
 #pragma warning restore 612, 618
         }

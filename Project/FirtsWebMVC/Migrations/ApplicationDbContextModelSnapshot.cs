@@ -18,7 +18,7 @@ namespace FirtsWebMVC.Migrations
 
             modelBuilder.Entity("FirtsWebMVC.Models.Person", b =>
                 {
-                    b.Property<string>("PersonId")
+                    b.Property<string>("PersonID")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
@@ -29,15 +29,9 @@ namespace FirtsWebMVC.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Sex")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.HasKey("PersonID");
 
-                    b.HasKey("PersonId");
-
-                    b.ToTable("Persons");
-
-                    b.UseTptMappingStrategy();
+                    b.ToTable("Person");
                 });
 #pragma warning restore 612, 618
         }

@@ -23,7 +23,7 @@ namespace FirtsWebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId, FullName, Address, Sex")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonID, FullName, Address")] Person person)
         {
             if(ModelState.IsValid)
             {
@@ -48,9 +48,9 @@ namespace FirtsWebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId, FullName, Address, Sex")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonID, FullName, Address")] Person person)
         {
-            if(id != person.PersonId)
+            if(id != person.PersonID)
             {
                 return NotFound();
             }
@@ -63,7 +63,7 @@ namespace FirtsWebMVC.Controllers
                 }
                 catch(DbUpdateConcurrencyException)
                 {
-                    if(!PersonExists(person.PersonId))
+                    if(!PersonExist(person.PersonID))
                     {
                         return NotFound();
                     }
@@ -82,7 +82,7 @@ namespace FirtsWebMVC.Controllers
             {
                 return NotFound();
             }
-            var person = await _context.Person.FirstOrDefaultAsync(m => m.PersonId == id);
+            var person = await _context.Person.FirstOrDefaultAsync(m => m.PersonID == id);
             if(person == null)
             {
                 return NotFound();
@@ -105,9 +105,9 @@ namespace FirtsWebMVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-        private bool PersonExists(string id)
+        private bool PersonExist(string id)
         {
-            return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
+            return (_context.Person?.Any(e => e.PersonID == id)).GetValueOrDefault();
         }
     }
 }
