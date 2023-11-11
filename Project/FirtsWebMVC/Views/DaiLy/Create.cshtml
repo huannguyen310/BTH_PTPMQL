@@ -4,14 +4,18 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>DaiLy</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="w3-row">
+    <b>DaiLy/Create</b>
+    <a class="w3-btn w3-round w3-border w3-teal w3-right" asp-action="Index">Back</a>
+</div>
+<hr>
+<div class="max-width-40 ud-center">
+    <div class="w3-container w3-teal">
+        <h2>Create new Agency</h2>
+    </div>
+    <form asp-action="Create" class="w3-container w3-card-4 w3-padding">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="w3=row">
             <div class="form-group">
                 <label asp-for="MaDaiLy" class="control-label"></label>
                 <input asp-for="MaDaiLy" class="form-control" />
@@ -41,15 +45,11 @@
                 <label asp-for="MaHTPP" class="control-label"></label>
                 <select asp-for="MaHTPP" class ="form-control" asp-items="ViewBag.MaHTPP"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="w3-margin-top">
+            <input type="submit" value="Create" class="btn btn-primary w3-border w3-teal" />
+        </div>
+    </form>
 </div>
 
 @section Scripts {
