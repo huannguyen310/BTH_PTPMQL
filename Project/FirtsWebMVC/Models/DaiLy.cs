@@ -6,6 +6,7 @@ namespace FirtsWebMVC.Models
     //BTH slide 20_c7
     public class DaiLy
     {
+        [Key]
         public string MaDaiLy { get; set; }
         public string TenDaiLy { get; set; }
         public string DiaChi { get; set; }
