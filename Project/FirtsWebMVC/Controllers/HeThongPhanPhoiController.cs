@@ -10,88 +10,87 @@ using FirtsWebMVC.Models;
 
 namespace FirtsWebMVC.Controllers
 {
-    public class EmployeeController : Controller
+    public class HeThongPhanPhoiController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public EmployeeController(ApplicationDbContext context)
+        public HeThongPhanPhoiController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Employee
+        // GET: HeThongPhanPhoi
         public async Task<IActionResult> Index()
         {
-              return _context.Employee != null ? 
-                          View(await _context.Employee.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+              return _context.HeThongPhanPhoi != null ? 
+                          View(await _context.HeThongPhanPhoi.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.HeThongPhanPhoi'  is null.");
         }
 
-        // GET: Employee/Details/5
+        // GET: HeThongPhanPhoi/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.HeThongPhanPhoi == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonID == id);
-            if (employee == null)
+            var heThongPhanPhoi = await _context.HeThongPhanPhoi
+                .FirstOrDefaultAsync(m => m.MaHTTP == id);
+            if (heThongPhanPhoi == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(heThongPhanPhoi);
         }
 
-        // GET: Employee/Create
+        // GET: HeThongPhanPhoi/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Employee/Create
+        // POST: HeThongPhanPhoi/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeID,Age,PersonID,FullName,Address,Gender")] Employee employee)
+        public async Task<IActionResult> Create([Bind("MaHTTP,TenHTTP")] HeThongPhanPhoi heThongPhanPhoi)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
+                _context.Add(heThongPhanPhoi);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonID"] = new SelectList(_context.Set<Person>(), "PersonID", "FullName", employee.PersonID);
-            return View(employee);
+            return View(heThongPhanPhoi);
         }
 
-        // GET: Employee/Edit/5
+        // GET: HeThongPhanPhoi/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.HeThongPhanPhoi == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee == null)
+            var heThongPhanPhoi = await _context.HeThongPhanPhoi.FindAsync(id);
+            if (heThongPhanPhoi == null)
             {
                 return NotFound();
             }
-            return View(employee);
+            return View(heThongPhanPhoi);
         }
 
-        // POST: Employee/Edit/5
+        // POST: HeThongPhanPhoi/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeID,Age,PersonID,FullName,Address,Gender")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("MaHTTP,TenHTTP")] HeThongPhanPhoi heThongPhanPhoi)
         {
-            if (id != employee.PersonID)
+            if (id != heThongPhanPhoi.MaHTTP)
             {
                 return NotFound();
             }
@@ -100,12 +99,12 @@ namespace FirtsWebMVC.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
+                    _context.Update(heThongPhanPhoi);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.PersonID))
+                    if (!HeThongPhanPhoiExists(heThongPhanPhoi.MaHTTP))
                     {
                         return NotFound();
                     }
@@ -116,49 +115,49 @@ namespace FirtsWebMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return View(heThongPhanPhoi);
         }
 
-        // GET: Employee/Delete/5
+        // GET: HeThongPhanPhoi/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Employee == null)
+            if (id == null || _context.HeThongPhanPhoi == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.PersonID == id);
-            if (employee == null)
+            var heThongPhanPhoi = await _context.HeThongPhanPhoi
+                .FirstOrDefaultAsync(m => m.MaHTTP == id);
+            if (heThongPhanPhoi == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(heThongPhanPhoi);
         }
 
-        // POST: Employee/Delete/5
+        // POST: HeThongPhanPhoi/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Employee == null)
+            if (_context.HeThongPhanPhoi == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.HeThongPhanPhoi'  is null.");
             }
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee != null)
+            var heThongPhanPhoi = await _context.HeThongPhanPhoi.FindAsync(id);
+            if (heThongPhanPhoi != null)
             {
-                _context.Employee.Remove(employee);
+                _context.HeThongPhanPhoi.Remove(heThongPhanPhoi);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(string id)
+        private bool HeThongPhanPhoiExists(string id)
         {
-          return (_context.Employee?.Any(e => e.PersonID == id)).GetValueOrDefault();
+          return (_context.HeThongPhanPhoi?.Any(e => e.MaHTTP == id)).GetValueOrDefault();
         }
     }
 }
