@@ -17,6 +17,21 @@ namespace FirtsWebMVC.Controllers
             var model = await _context.Person.ToListAsync();
             return View(model);
         }
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null || _context.Person == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _context.Person.FirstOrDefaultAsync(m => m.PersonID == id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return View(person);
+        }
         public IActionResult Create()
         {
             return View();
