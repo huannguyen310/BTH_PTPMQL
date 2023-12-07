@@ -221,9 +221,6 @@ C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\ru\Microsoft.
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\obj\Debug\net7.0\FirtsWebMVC.csproj.AssemblyReference.cache
@@ -256,3 +253,11 @@ C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win-
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\EPPlus.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\EPPlus.Interfaces.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\EPPlus.System.Drawing.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\Users\huanc\Desktop\PTPMQL\Project\FirtsWebMVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
