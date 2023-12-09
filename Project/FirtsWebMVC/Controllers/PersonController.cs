@@ -4,20 +4,32 @@ using FirtsWebMVC.Data;
 using FirtsWebMVC.Models;
 using FirtsWebMVC.Models.Process;
 using OfficeOpenXml;
+using X.PagedList;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FirtsWebMVC.Controllers
 {
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private ExcelProcess _excelPro = new ExcelProcess();
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
-        private ExcelProcess _excelPro = new ExcelProcess();
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page, int? PageSize)
         {
-            var model = await _context.Person.ToListAsync();
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value="5", Text="5"},
+                new SelectListItem() { Value="10", Text="10"},
+                new SelectListItem() { Value="15", Text="15"},
+                new SelectListItem() { Value="25", Text="25"},
+                new SelectListItem() { Value="50", Text="50"},
+            };
+            int pagesize = (PageSize ?? 5);
+            ViewBag.psize = pagesize;
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
             return View(model);
         }
         public async Task<IActionResult> Details(string id)
@@ -174,7 +186,7 @@ namespace FirtsWebMVC.Controllers
         }
         public IActionResult Download()
         {
-            var fileName = "YourFileName.xlsx";
+            var fileName = "Person.xlsx";
             using(ExcelPackage excelPackage = new ExcelPackage())
             {
                 ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");

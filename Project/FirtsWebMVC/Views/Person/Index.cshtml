@@ -1,10 +1,12 @@
 @model IEnumerable<FirtsWebMVC.Models.Person>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
 
 @{
     ViewData["Title"] = "Index";
 }
 <h1>PERSON LIST</h1>
-
+<hr />
 <div class="w3-row">
     <a class="w3-big w3-btn w3-round w3-border w3-teal" asp-action="Create">Create New</a>
     <a class="w3-right w3-big w3-btn w3-round w3-border w3-teal" asp-action="Download">Download file</a>
@@ -52,3 +54,27 @@
 }
     </tbody>
 </table>
+<hr>
+@using (Html.BeginForm("Index", "Person", FormMethod.Get, new { id = "form1"}))
+{
+    <div class="row">
+        <div class="col-md-11">
+            @Html.PagedListPager((IPagedList) Model, page => Url.Action("Index", new {page = page}),
+                new X.PagedList.Web.Common.PagedListRenderOptions { LiElementClasses = new string[] {"page-item"}, 
+                PageClasses = new string[] { "page-link" }})
+        </div>
+        <div class="col-md-1">
+            @Html.DropDownList("pageSize", null, new {@class="form-select"})
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function()
+    {
+        $("#pageSize").change(function()
+        {
+            $("#form1").submit();
+        });
+    });
+</script>
