@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FirtsWebMVC.Data;
 using FirtsWebMVC.Models;
+using FirtsWebMVC.Models.Process;
 
 namespace FirtsWebMVC.Controllers
 {
     public class DaiLyController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private ExcelProcess _excelPro = new ExcelProcess();
 
         public DaiLyController(ApplicationDbContext context)
         {
@@ -159,7 +161,52 @@ namespace FirtsWebMVC.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        public async Task<IActionResult> Upload()
+        {
+            return View();   
+        }
+        [HttpPost]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file!=null)
+                {
+                    string fileExtension = Path.GetExtension(file.FileName);
+                    if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                    {
+                        ModelState.AddModelError("", "Please choose excel file to upload!");
+                    }
+                    else
+                    {
+                        //rename file when upload to server
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", "File" + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Millisecond + fileExtension);
+                        var fileLocation = new FileInfo(filePath).ToString();
+                        if (file.Length > 0)
+                        {
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                //save file to server
+                                await file.CopyToAsync(stream);
+                                //read data from file and write to database
+                                var dt = _excelPro.ExcelToDataTable(fileLocation);
+                                for(int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    var daily = new DaiLy();
+                                    daily.TenDaiLy = dt.Rows[i][0].ToString();
+                                    daily.DiaChi = dt.Rows[i][1].ToString();
+                                    daily.NguoiDaiDien = dt.Rows[i][2].ToString();
+                                    daily.DienThoai = dt.Rows[i][3].ToString();
+                                    daily.MaHTPP = dt.Rows[i][4].ToString();
+                                    _context.Add(daily);
+                                }
+                                await _context.SaveChangesAsync();
+                                return RedirectToAction(nameof(Index));
+                            }
+                        }
+                    }
+                }
+            
+            return View();
+        }
         private bool DaiLyExists(string id)
         {
           return (_context.DaiLy?.Any(e => e.MaDaiLy == id)).GetValueOrDefault();
